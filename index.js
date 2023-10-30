@@ -6,6 +6,12 @@ const path = require("path")
 
 const app = express()
 
+app.get('/usuarios/:id', (requisiçao, resposta) => {
+    const id = requisiçao.params.id
+
+    console.log(id)
+    resposta.sendFile(`${caminhoBase}/usurios.html`)
+})
 const caminhoBase = path.join(__dirname, "templates")
 
 app.get('/', (requisicao, resposta) =>{
